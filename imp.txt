@@ -1,0 +1,4 @@
+template engine - 
+kahi bhi inject kr skte ho apna programativly code {% %}
+{% static style.css%}
+{% load static%}
