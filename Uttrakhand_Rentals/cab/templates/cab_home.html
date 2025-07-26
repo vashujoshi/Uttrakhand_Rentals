@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Cab Booking - UttarakhandRental{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'cab_home.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="cab-list">
+    <div class="container">
+        <h2>Available Cabs</h2>
+        {% if cabs %}
+            <div class="cab-grid">
+                {% for cab in cabs %}
+                    <div class="cab-card">
+                        <h3>{{ cab.name }}</h3>
+                        <p>Type: {{ cab.type }}</p>
+                        <p>Price: ₹{{ cab.price }} per km</p>
+                        {% if cab.image %}
+                            <img src="{{ cab.image.url }}" alt="{{ cab.name }}">
+                        {% endif %}
+                        <a href="#" class="btn">Book Now</a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No cabs available at the moment.</p>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

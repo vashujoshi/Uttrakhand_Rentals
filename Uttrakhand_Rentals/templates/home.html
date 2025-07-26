@@ -1,18 +1,15 @@
-{% load static%}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>UttarakhandRental - Cab, Bike & Stay Booking</title>
-    <link rel="stylesheet" href="{% static 'home.css' %}">
-</head>
-<body>
-    <header>
+{% extends "layout.html" %}
+{% load static %}
+    {% block title %}UttarakhandRental - Cab, Bike & Stay Booking{% endblock %}
+
+
+    {% block content %}
+         <header>
         <div class="container">
-            <h1>UttarakhandRental</h1>
+            <h1>Uttarakhand Rental</h1>
             <nav>
                 <a href="#">Home</a>
-                <a href="#cab">Cab</a>
+                <a href="cab">Cab</a>
                 <a href="#bike">Bike</a>
                 <a href="#stay">Stay</a>
                 <a href="#contact">Contact</a>
@@ -30,7 +27,7 @@
         <div class="container">
             <h3>Cab Booking</h3>
             <p>Comfortable and affordable cab services across Uttarakhand.</p>
-            <a href="#" class="btn">Book a Cab</a>
+            <a href="cab" class="btn">Book a Cab</a>
         </div>
     </section>
     <section id="bike" class="service">
@@ -52,5 +49,6 @@
             <p>&copy; 2025 UttarakhandRental. All rights reserved.</p>
         </div>
     </footer>
-</body>
-</html>
+    {% endblock %}
+    {% block extra_js %}
+    {% endblock %}

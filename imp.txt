@@ -2,3 +2,30 @@ template engine -
 kahi bhi inject kr skte ho apna programativly code {% %}
 {% static style.css%}
 {% load static%}
+
+AFTER MAKING NEW APPS USING PYTHON MANAGE.PY STARTAPP
+ MAKE MAIN PROJECT AWARE NEW APPS ARE ADDED
+images add krne ke lie pillow and setting.py mai 
+
+
+MEDIA_URL='/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
+
+the fix url using this 
+from django.conf import settings
+from django.conf.urls.static import static
+
+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT) kis tarag se static add honge
+
+
+python makemigrations app_name jisme kaam krre usko he to migrate kroge sbko tohra krna hai
+
+
+models ko admin mai register
+
+for more configurations add  
+def __str__(self):
+return self.name
+
+now if you want to click a button like book now in cab booking you need its functionalty too
+so how to achieve that 
